@@ -30,6 +30,10 @@ public class PlayerController : MonoBehaviour {
 					Destroy (hit.collider.gameObject);
 				}
 			}
+            if (hit.collider.gameObject.tag == "Trup")
+            {
+                Destroy(hit.collider.gameObject);
+            }
 		}
 			
 
