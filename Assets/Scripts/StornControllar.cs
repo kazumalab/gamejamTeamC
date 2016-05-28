@@ -3,7 +3,6 @@ using System.Collections;
 
 public class StornControllar : MonoBehaviour {
 
-    private int Range = 1;
 
 	// Use this for initialization
 	void Start () {
