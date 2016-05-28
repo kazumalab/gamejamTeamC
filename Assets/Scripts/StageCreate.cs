@@ -18,10 +18,20 @@ public class StageCreate : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        wallsChild_1 = new GameObject[walls.Length];
+        wallsChild_2 = new GameObject[walls.Length];
+        wallsChild_3 = new GameObject[walls.Length];
+        wallsChild_4 = new GameObject[walls.Length];
+        wallsChild_5 = new GameObject[walls.Length];
+        wallsChild_6 = new GameObject[walls.Length];
+        wallsChild_7 = new GameObject[walls.Length];
+        wallsChild_8 = new GameObject[walls.Length];
+        wallsChild_9 = new GameObject[walls.Length];
         for (int i = 0; i < 9; i++)
         {
             for (int z = -200; z < 200; z += 50)
             {
+                Debug.Log(walls[0].transform.FindChild("point(z:" + z.ToString() + ")").gameObject);
                 wallsChild_1[i] = walls[0].transform.FindChild("point(z:" + z.ToString() + ")").gameObject;
             }
         }
@@ -89,12 +99,15 @@ public class StageCreate : MonoBehaviour {
                 wallsChild_9[i] = walls[8].transform.FindChild("point(z:" + z.ToString() + ")").gameObject;
             }
         }
+
+        
+
 	}
 
     // Update is called once per frame
     void Update()
     {
-
+        
 	
 	}
 }
