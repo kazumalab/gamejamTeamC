@@ -20,6 +20,7 @@ public class StageCreate : MonoBehaviour {
 
 	private int i = 0;
 	private int ran = 0;
+	private int beforran = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -97,12 +98,32 @@ public class StageCreate : MonoBehaviour {
 		for (int i = 0; i < 9; i++)
 		{
 			ran = Random.Range (1, 5);
+			if (ran == 1 || ran == 2) {
+				if (beforran == ran + 2) {
+					ran++;
+				}
+			} else if (ran == 3 || ran == 4) {
+				if (beforran == ran - 2) {
+					ran++;
+				}
+			}
+			beforran = ran;
 			Instantiate (wallprefab, wallsChild_1[i].transform.position, Quaternion.Euler(wallprefab.transform.rotation.x, wallprefab.transform.rotation.y + 90f * ran, wallprefab.transform.rotation.z));
 			i++;
 		}
 
 		for (int i = 0; i < 9; i++)
 		{
+			if (ran == 1 || ran == 2) {
+				if (beforran == ran + 2) {
+					ran++;
+				}
+			} else if (ran == 3 || ran == 4) {
+				if (beforran == ran - 2) {
+					ran++;
+				}
+			}
+			beforran = ran;
 			ran = Random.Range (1, 5);
 			Instantiate (wallprefab, wallsChild_2[i].transform.position, Quaternion.Euler(wallprefab.transform.rotation.x, wallprefab.transform.rotation.y + 90f * ran, wallprefab.transform.rotation.z));
 			i++;
@@ -110,6 +131,16 @@ public class StageCreate : MonoBehaviour {
 
 		for (int i = 0; i < 9; i++)
 		{
+			if (ran == 1 || ran == 2) {
+				if (beforran == ran + 2) {
+					ran++;
+				}
+			} else if (ran == 3 || ran == 4) {
+				if (beforran == ran - 2) {
+					ran++;
+				}
+			}
+			beforran = ran;
 			ran = Random.Range (1, 5);
 			Instantiate (wallprefab, wallsChild_3[i].transform.position, Quaternion.Euler(wallprefab.transform.rotation.x, wallprefab.transform.rotation.y + 90f * ran, wallprefab.transform.rotation.z));
 			i++;
@@ -117,6 +148,16 @@ public class StageCreate : MonoBehaviour {
 
 		for (int i = 0; i < 9; i++)
 		{
+			if (ran == 1 || ran == 2) {
+				if (beforran == ran + 2) {
+					ran++;
+				}
+			} else if (ran == 3 || ran == 4) {
+				if (beforran == ran - 2) {
+					ran++;
+				}
+			}
+			beforran = ran;
 			ran = Random.Range (1, 5);
 			Instantiate (wallprefab, wallsChild_4[i].transform.position, Quaternion.Euler(wallprefab.transform.rotation.x, wallprefab.transform.rotation.y + 90f * ran, wallprefab.transform.rotation.z));
 			i++;
@@ -124,6 +165,16 @@ public class StageCreate : MonoBehaviour {
 
 		for (int i = 0; i < 9; i++)
 		{
+			if (ran == 1 || ran == 2) {
+				if (beforran == ran + 2) {
+					ran++;
+				}
+			} else if (ran == 3 || ran == 4) {
+				if (beforran == ran - 2) {
+					ran++;
+				}
+			}
+			beforran = ran;
 			ran = Random.Range (1, 5);
 			Instantiate (wallprefab, wallsChild_5[i].transform.position, Quaternion.Euler(wallprefab.transform.rotation.x, wallprefab.transform.rotation.y + 90f * ran, wallprefab.transform.rotation.z));
 			i++;
@@ -131,6 +182,16 @@ public class StageCreate : MonoBehaviour {
 
 		for (int i = 0; i < 9; i++)
 		{
+			if (ran == 1 || ran == 2) {
+				if (beforran == ran + 2) {
+					ran++;
+				}
+			} else if (ran == 3 || ran == 4) {
+				if (beforran == ran - 2) {
+					ran++;
+				}
+			}
+			beforran = ran;
 			ran = Random.Range (1, 5);
 			Instantiate (wallprefab, wallsChild_6[i].transform.position, Quaternion.Euler(wallprefab.transform.rotation.x, wallprefab.transform.rotation.y + 90f * ran, wallprefab.transform.rotation.z));
 			i++;
@@ -138,6 +199,16 @@ public class StageCreate : MonoBehaviour {
 
 		for (int i = 0; i < 9; i++)
 		{
+			if (ran == 1 || ran == 2) {
+				if (beforran == ran + 2) {
+					ran++;
+				}
+			} else if (ran == 3 || ran == 4) {
+				if (beforran == ran - 2) {
+					ran++;
+				}
+			}
+			beforran = ran;
 			ran = Random.Range (1, 5);
 			Instantiate (wallprefab, wallsChild_7[i].transform.position, Quaternion.Euler(wallprefab.transform.rotation.x, wallprefab.transform.rotation.y + 90f * ran, wallprefab.transform.rotation.z));
 			i++;
@@ -145,6 +216,16 @@ public class StageCreate : MonoBehaviour {
 
 		for (int i = 0; i < 9; i++)
 		{
+			if (ran == 1 || ran == 2) {
+				if (beforran == ran + 2) {
+					ran++;
+				}
+			} else if (ran == 3 || ran == 4) {
+				if (beforran == ran - 2) {
+					ran++;
+				}
+			}
+			beforran = ran;
 			ran = Random.Range (1, 5);
 			Instantiate (wallprefab, wallsChild_8[i].transform.position, Quaternion.Euler(wallprefab.transform.rotation.x, wallprefab.transform.rotation.y + 90f * ran, wallprefab.transform.rotation.z));
 			i++;
@@ -152,6 +233,16 @@ public class StageCreate : MonoBehaviour {
 
 		for (int i = 0; i < 9; i++)
 		{
+			if (ran == 1 || ran == 2) {
+				if (beforran == ran + 2) {
+					ran++;
+				}
+			} else if (ran == 3 || ran == 4) {
+				if (beforran == ran - 2) {
+					ran++;
+				}
+			}
+			beforran = ran;
 			ran = Random.Range (1, 5);
 			Instantiate (wallprefab, wallsChild_9[i].transform.position, Quaternion.Euler(wallprefab.transform.rotation.x, wallprefab.transform.rotation.y + 90f * ran, wallprefab.transform.rotation.z));
 			i++;
