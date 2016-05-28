@@ -13,8 +13,6 @@ public class DeathLifeManager : MonoBehaviour {
 	public bool DeathMode = false;
 	public bool LifeMode = true;
 
-	public GameObject Player;
-
 	[Header("--フェードに使う--")]
 	public Image fadeImage;
 

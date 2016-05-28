@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class FadeManager : MonoBehaviour {
 
-	private bool isFade = false;
+	public bool isFade = false;
 	private float count = 1f;
 
 
-	private bool isFastFade;
-	private bool isEndFade = false;
+	public bool isFastFade;
+	public bool isEndFade = false;
 
 	public Image FadeImage;
 
