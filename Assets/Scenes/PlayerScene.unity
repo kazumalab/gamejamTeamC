@@ -189,48 +189,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!1001 &669099835
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 426246, guid: 90a56504b22ad4e99b04e07ba4c09299, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 6.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 426246, guid: 90a56504b22ad4e99b04e07ba4c09299, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 426246, guid: 90a56504b22ad4e99b04e07ba4c09299, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 4.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 426246, guid: 90a56504b22ad4e99b04e07ba4c09299, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 426246, guid: 90a56504b22ad4e99b04e07ba4c09299, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426246, guid: 90a56504b22ad4e99b04e07ba4c09299, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426246, guid: 90a56504b22ad4e99b04e07ba4c09299, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 426246, guid: 90a56504b22ad4e99b04e07ba4c09299, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 90a56504b22ad4e99b04e07ba4c09299, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &691437025
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,21 +434,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 931971182}
---- !u!1 &1043018448 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 137418, guid: 90a56504b22ad4e99b04e07ba4c09299, type: 2}
-  m_PrefabInternal: {fileID: 669099835}
---- !u!114 &1043018453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1043018448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 720380cf0426941bca3956e3bfcdc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1502176294
 GameObject:
   m_ObjectHideFlags: 0
