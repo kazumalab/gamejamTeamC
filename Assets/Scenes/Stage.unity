@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.4
   m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -49,7 +49,7 @@ LightmapSettings:
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
-    m_EnvironmentLightingMode: 0
+    m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
@@ -205,6 +205,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 80276197}
+  - 65: {fileID: 80276198}
+  - 114: {fileID: 80276199}
   m_Layer: 0
   m_Name: Stair
   m_TagString: Untagged
@@ -231,6 +233,30 @@ Transform:
   - {fileID: 970395560}
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!65 &80276198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 80276196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.8, y: 10, z: 30}
+  m_Center: {x: -15.02, y: 10, z: -17.75}
+--- !u!114 &80276199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 80276196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b548fc3539c4870a90f13ca6dbe9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeImage: {fileID: 475721015}
 --- !u!1 &120396054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1158,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22461734, guid: 16b6d36bb15d84d1c86c3dff12aa69e8, type: 2}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461798, guid: 16b6d36bb15d84d1c86c3dff12aa69e8, type: 2}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3945,7 +3975,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1860756739}
   - 33: {fileID: 1860756742}
-  - 64: {fileID: 1860756741}
   - 23: {fileID: 1860756740}
   m_Layer: 0
   m_Name: Plane (1)
@@ -3993,18 +4022,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &1860756741
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1860756738}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1860756742
 MeshFilter:
   m_ObjectHideFlags: 0

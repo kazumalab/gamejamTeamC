@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour {
 
 		Vector3 v3 = new Vector3 (0, 0, 0);
 
-		v3.y -= 10000f * Time.deltaTime;
+		v3.y -= 1000f * Time.deltaTime;
 
 		Vector2 mouseSpeed = new Vector2 (Input.GetAxis ("Mouse X"), Input.GetAxis ("Mouse Y"));
 		PlayerCameraRotate (mouseSpeed);
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour {
 
 	void PlayerMove() {
 		float dx = Input.GetAxis ("Vertical");
-		heads.transform.position += heads.transform.TransformDirection (Vector3.forward) * dx;
+		heads.transform.position += heads.transform.TransformDirection (Vector3.forward) * dx * 2;
 	}
 
 	void OnTriggerEnter(Collider col) {
