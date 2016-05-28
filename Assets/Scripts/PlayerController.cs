@@ -9,18 +9,13 @@ public class PlayerController : MonoBehaviour {
 	// --------------------------
 
 	public GameObject heads;
-	public GameObject hunmer;
+	private CharacterController cc;
 
-	public Canvas HaveItemList;
-	public Sprite[] Itemimages;
-	public GameObject item;
-
-	private Animator anim;
 
 	// --------------------------
 
 	void Start () {
-		anim = hunmer.GetComponent<Animator> ();
+		cc = heads.GetComponent<CharacterController> ();
 	}
 	
 	void Update () {
@@ -28,18 +23,25 @@ public class PlayerController : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay (new Vector3 ((float)Screen.width / 2f, (float)Screen.height / 2f, 0));
 		RaycastHit hit;
 
-		if (Physics.Raycast (ray, out hit, 3)) {
-			if (Input.GetMouseButton (0)) {
-				SwingHummer (hit.collider.gameObject);
+		if (Physics.Raycast (ray, out hit, 100)) {
+			if (hit.collider.gameObject.tag == "Enemy") {
+				if (Input.GetMouseButton (0)) {
+					Destroy (hit.collider.gameObject);
+				}
 			}
-
 		}
+			
 
+		Vector3 v3 = new Vector3 (0, 0, 0);
 
+		v3.y -= 20f * Time.deltaTime;
 
 		Vector2 mouseSpeed = new Vector2 (Input.GetAxis ("Mouse X"), Input.GetAxis ("Mouse Y"));
 		PlayerCameraRotate (mouseSpeed);
 		PlayerMove ();
+
+		cc.Move (v3 * Time.deltaTime);
+
 	}
 
 
@@ -52,20 +54,6 @@ public class PlayerController : MonoBehaviour {
 	void PlayerMove() {
 		float dx = Input.GetAxis ("Vertical");
 		heads.transform.position += heads.transform.TransformDirection (Vector3.forward) * dx / 10f;
-	}
-
-	void SwingHummer(GameObject obj) {
-		anim.SetTrigger ("attack");
-		if (obj != null) {
-			
-			Sprite sprite = obj.GetComponent<Image> ().sprite;
-			Destroy (obj);
-
-			// ここにアイテムボタンを生成コードを入れる
-			GameObject items = (GameObject)Instantiate(item);
-			items.GetComponent<Button> ().image.sprite = sprite;
-			items.transform.parent = HaveItemList.transform;
-		}
 	}
 
 }
