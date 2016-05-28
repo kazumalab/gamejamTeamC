@@ -8,7 +8,7 @@ public class DeathLifeManager : MonoBehaviour {
 
 	private float count = 0f;
 	private bool isAlphaTop = false;
-	private bool isFadeOn = false; // trueにするだけでフェードイン発動
+	public bool isFadeOn = false; // trueにするだけでフェードイン発動
 
 	[Header("--フェードに使う--")]
 	public Image fadeImage;
@@ -38,6 +38,7 @@ public class DeathLifeManager : MonoBehaviour {
 				count -= 0.025f;
 				if (image.color.a <= 0f) {
 					isFadeOn = false;
+					isAlphaTop = false;
 				}
 			}
 			setAlpha (image, count);

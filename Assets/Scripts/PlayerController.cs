@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	// --------------------------
 
 	public GameObject heads;
+	public GameObject deathlifeManager;
 	private CharacterController cc;
 
 
@@ -54,6 +55,12 @@ public class PlayerController : MonoBehaviour {
 	void PlayerMove() {
 		float dx = Input.GetAxis ("Vertical");
 		heads.transform.position += heads.transform.TransformDirection (Vector3.forward) * dx / 10f;
+	}
+
+	void OnTriggerEnter(Collider col) {
+		if (col.gameObject.tag == "warp") {
+			deathlifeManager.GetComponent<DeathLifeManager> ().isFadeOn = true;
+		}
 	}
 
 }
