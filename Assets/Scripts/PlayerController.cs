@@ -23,8 +23,12 @@ public class PlayerController : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay (new Vector3 ((float)Screen.width / 2f, (float)Screen.height / 2f, 0));
 		RaycastHit hit;
 
-		if (Physics.Raycast (ray, out hit, 3)) {
-			
+		if (Physics.Raycast (ray, out hit, 100)) {
+			if (hit.collider.gameObject.tag == "Enemy") {
+				if (Input.GetMouseButton (0)) {
+					Destroy (hit.collider.gameObject);
+				}
+			}
 		}
 			
 
