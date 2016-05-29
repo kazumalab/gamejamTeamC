@@ -13,7 +13,10 @@ public class DeathLifeManager : MonoBehaviour {
 	public bool DeathMode = false;
 	public bool LifeMode = true;
 
-	public GameObject Player;
+	public Sprite deathIcon;
+	public Sprite lifeIcon;
+
+	public Image Icon;
 
 	[Header("--フェードに使う--")]
 	public Image fadeImage;
@@ -58,9 +61,11 @@ public class DeathLifeManager : MonoBehaviour {
 
 	void SwichDeathorLife () {
 		if (DeathMode) {
+			Icon.sprite = lifeIcon;
 			DeathMode = false;
 			LifeMode = true;
 		} else {
+			Icon.sprite = deathIcon;
 			DeathMode = true;
 			LifeMode = false;
 		}

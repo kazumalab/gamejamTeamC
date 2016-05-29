@@ -6,6 +6,8 @@ public class StageCreate : MonoBehaviour {
 
 	public GameObject wallprefab;
 
+	public GameObject[] Gimmics;
+
     public GameObject[] walls;
 
 	public GameObject[] wallsChild_1;

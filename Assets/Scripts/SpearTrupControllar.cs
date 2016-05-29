@@ -5,18 +5,20 @@ public class SpearTrupControllar : MonoBehaviour {
 
     private bool falg = false;
 
-    public int speed = 12;
+    public int speed = 30;
+	private GameObject fadeManager;
 
 	// Use this for initialization
 	void Start () {
-	
+		fadeManager = GameObject.Find ("Stair");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (falg == true && transform.position.y < 6)
+		if (falg && this.transform.position.y <= 6.4f)
         {
-            transform.Translate(Vector3.up * (Time.deltaTime * speed) );
+			falg = false;
+            transform.Translate(Vector3.up * (Time.deltaTime * speed));
         }
 
 	}
@@ -24,10 +26,15 @@ public class SpearTrupControllar : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
-        {
-            //transform.Translate(Vector3.up * 5);
+		{
             falg = true;
-
+			StartCoroutine (InObakeGameOver ());
         }
     }
+
+	IEnumerator InObakeGameOver() {
+		fadeManager.GetComponent<FadeManager> ().isEndFade = true;
+		yield return new WaitForSeconds (1);
+		fadeManager.GetComponent<FadeManager> ().isFade = true;
+	}
 }
