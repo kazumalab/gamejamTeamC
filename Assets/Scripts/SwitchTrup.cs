@@ -46,8 +46,8 @@ public class SwitchTrup : MonoBehaviour {
     }
 
 	IEnumerator ClickStageButton() {
-		yield return new WaitForSeconds (3);
 		fadeManager.GetComponent<FadeManager> ().isDeathEnd = true;
+		yield return new WaitForSeconds (3);
 		fadeManager.GetComponent<FadeManager> ().isFade = true;
 	}
 

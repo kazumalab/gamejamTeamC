@@ -198,6 +198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathlifeManager: {fileID: 1188686534}
   Obake: {fileID: 159182, guid: b94aa2781491a4acbac21ee7f23c9b98, type: 2}
+  GameTime: {fileID: 803813061}
+  times: 0
   scoreText: {fileID: 2120988455}
 --- !u!4 &61171741
 Transform:
@@ -2750,7 +2752,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -2779,10 +2781,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 374980215}
-  m_LocalRotation: {x: 0.9659257, y: 0.0001623216, z: 0.25881904, w: -0.00060585234}
+  m_LocalRotation: {x: 0.9821474, y: -0.06400079, z: 0.1031365, w: 0.14371243}
   m_LocalPosition: {x: -121.12643, y: -36.212463, z: -255.51974}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: -0.071899995, y: -210, z: -180}
+  m_LocalEulerAnglesHint: {x: 17.187199, y: -191.1165, z: -174.2284}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -8888,7 +8890,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30AC\u30AE\u304C\u306A\u3044\u3068\u4E0A\u304C\u308C\u307E\u305B\u3093\u3002"
+  m_Text: "\u30AB\u30AE\u304C\u306A\u3044\u3068\u4E0A\u304C\u308C\u307E\u305B\u3093\u3002"
 --- !u!222 &765837353
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10549,6 +10551,80 @@ Transform:
   - {fileID: 629251682}
   m_Father: {fileID: 975118866}
   m_RootOrder: 4
+--- !u!1 &803813059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 803813060}
+  - 222: {fileID: 803813062}
+  - 114: {fileID: 803813061}
+  m_Layer: 5
+  m_Name: GameTime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &803813060
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803813059}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 977011973}
+  m_RootOrder: 3
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.0000076293945, y: -37.499985}
+  m_SizeDelta: {x: 299, y: 75}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &803813061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803813059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u7D4C\u904E\u6642\u9593 0:00"
+--- !u!222 &803813062
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803813059}
 --- !u!1 &845998442
 GameObject:
   m_ObjectHideFlags: 0
@@ -11002,6 +11078,7 @@ RectTransform:
   - {fileID: 2120988454}
   - {fileID: 2099393713}
   - {fileID: 878817916}
+  - {fileID: 803813060}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_AnchorMin: {x: 0, y: 0}
@@ -15735,6 +15812,10 @@ Prefab:
       propertyPath: fadeManager
       value: 
       objectReference: {fileID: 80276196}
+    - target: {fileID: 11451082, guid: 2eb5238947e1ab043ac39dc0645b77d5, type: 2}
+      propertyPath: deathLifeManager
+      value: 
+      objectReference: {fileID: 1188686534}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2eb5238947e1ab043ac39dc0645b77d5, type: 2}
   m_IsPrefabParent: 0

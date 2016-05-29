@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
 	public GameObject deathlifeManager;
 	public GameObject Obake;
 
+	public Text GameTime;
+	public float times;
+
 	public static int Score = 1;
 	public Text scoreText;
 
@@ -24,7 +27,8 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		times += Time.deltaTime;
+		GameTime.text = "経過時間" + times.ToString("f2");
 		scoreText.text = "現在 : " + Score + "階";
 
 		if ( deathorlife.DeathMode ) {

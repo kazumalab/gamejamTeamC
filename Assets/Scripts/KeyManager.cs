@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class KeyManager : MonoBehaviour {
-	public GameObject deathlifeManager;
+	private GameObject deathlifeManager;
 	// Use this for initialization
 	void Start () {
-	
+		deathlifeManager = GameObject.Find ("DeathLifeManager");
 	}
 	
 	// Update is called once per frame

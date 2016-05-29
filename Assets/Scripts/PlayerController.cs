@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour {
             {
                 Destroy(hit.collider.gameObject);
 				if (!deathlifeManager.GetComponent<DeathLifeManager> ().DeathMode) {
+					fadeManager.GetComponent<FadeManager> ().isDeathEnd = true;
 					this.GetComponent<AudioSource> ().clip = voice;
 					StartCoroutine (DeathByFallStone ());
 				}
