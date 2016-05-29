@@ -7,6 +7,7 @@ public class StageCreate : MonoBehaviour {
 	public GameObject wallprefab;
 
 	public GameObject[] Gimmics;
+	public GameObject FallRock;
 
     public GameObject[] walls;
 
@@ -26,6 +27,9 @@ public class StageCreate : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		int ran = Random.Range (1, Gimmics.Length + 1);
+		Instantiate (FallRock, new Vector3 (Gimmics [ran].transform.position.x, 25.6f, Gimmics [ran].transform.position.z), FallRock.transform.rotation);
 		
         wallsChild_1 = new GameObject[walls.Length];
         wallsChild_2 = new GameObject[walls.Length];

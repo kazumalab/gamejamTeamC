@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour {
 	public GameObject deathlifeManager;
 	public GameObject fadeManager;
 	private CharacterController cc;
+	public bool haveKey = false;
+	public AudioClip voice;
 
 
 	// --------------------------
@@ -22,6 +24,8 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	void Update () {
+
+		Debug.Log (haveKey + "have key?");
 
 		Ray ray = Camera.main.ScreenPointToRay (new Vector3 ((float)Screen.width / 2f, (float)Screen.height / 2f, 0));
 		RaycastHit hit;
@@ -35,6 +39,10 @@ public class PlayerController : MonoBehaviour {
             if (hit.collider.gameObject.tag == "Trup")
             {
                 Destroy(hit.collider.gameObject);
+				if (!deathlifeManager.GetComponent<DeathLifeManager> ().DeathMode) {
+					this.GetComponent<AudioSource> ().clip = voice;
+					StartCoroutine (DeathByFallStone ());
+				}
             }
 		}
 			
@@ -58,16 +66,23 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void PlayerMove() {
-		if (!fadeManager.GetComponent<FadeManager> ().isEndFade) {
+		if (!fadeManager.GetComponent<FadeManager> ().isDeathEnd) {
 			float dx = Input.GetAxis ("Vertical");
 			heads.transform.position += heads.transform.TransformDirection (Vector3.forward) * dx * 2;
 		}
 	}
 
-	void OnTriggerEnter(Collider col) {
-		if (col.gameObject.tag == "warp") {
-			deathlifeManager.GetComponent<DeathLifeManager> ().isFadeOn = true;
-		}
+	IEnumerator DeathByFallStone() {
+		yield return new WaitForSeconds (2);
+		this.GetComponent<AudioSource> ().Play ();
+		fadeManager.GetComponent<FadeManager> ().isDeathEnd = true;
+		fadeManager.GetComponent<FadeManager> ().isFade = true;
 	}
+
+//	void OnTriggerEnter(Collider col) {
+//		if (col.gameObject.tag == "warp") {
+//			deathlifeManager.GetComponent<DeathLifeManager> ().isFadeOn = true;
+//		}
+//	}
 
 }

@@ -37,7 +37,7 @@ public class SpearTrupControllar : MonoBehaviour {
     }
 
 	IEnumerator InObakeGameOver() {
-		fadeManager.GetComponent<FadeManager> ().isEndFade = true;
+		fadeManager.GetComponent<FadeManager> ().isDeathEnd = true;
 		yield return new WaitForSeconds (1);
 		fadeManager.GetComponent<FadeManager> ().isFade = true;
 	}

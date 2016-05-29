@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ClickManger : MonoBehaviour {
+public class CancelButton : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -9,7 +9,7 @@ public class ClickManger : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	public void PushCancelButton () {
+		this.transform.root.gameObject.SetActive (false);
 	}
 }

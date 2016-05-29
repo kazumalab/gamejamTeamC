@@ -18,6 +18,10 @@ public class DeathLifeManager : MonoBehaviour {
 
 	public Image Icon;
 
+	public GameObject SoundManagerMain;
+	public AudioClip DeathSound;
+	public AudioClip LifeSound;
+
 	[Header("--フェードに使う--")]
 	public Image fadeImage;
 
@@ -62,12 +66,15 @@ public class DeathLifeManager : MonoBehaviour {
 	void SwichDeathorLife () {
 		if (DeathMode) {
 			Icon.sprite = lifeIcon;
+			SoundManagerMain.GetComponent<AudioSource> ().clip = LifeSound;
 			DeathMode = false;
 			LifeMode = true;
 		} else {
 			Icon.sprite = deathIcon;
+			SoundManagerMain.GetComponent<AudioSource> ().clip = DeathSound;
 			DeathMode = true;
 			LifeMode = false;
 		}
+		SoundManagerMain.GetComponent<AudioSource> ().Play ();
 	}
 }

@@ -4,6 +4,9 @@ using System.Collections;
 public class SwitchTrup : MonoBehaviour {
 
     private int OnTiem;
+	public GameObject fadeManager;
+	public GameObject deathLifeManager;
+
 
     //IEnumerator PushButton()
     //{
@@ -32,14 +35,20 @@ public class SwitchTrup : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            if (++OnTiem > 10)
-            {
-                other.transform.Translate(Vector3.down * 15);
-            }
-        }
-
+		if (other.tag == "Player") {
+			if (!deathLifeManager.GetComponent<DeathLifeManager> ().DeathMode) {
+				if (++OnTiem > 10) {
+					other.transform.Translate (Vector3.down * 20);
+					StartCoroutine (ClickStageButton ());
+				}
+			}
+		}
     }
+
+	IEnumerator ClickStageButton() {
+		yield return new WaitForSeconds (3);
+		fadeManager.GetComponent<FadeManager> ().isDeathEnd = true;
+		fadeManager.GetComponent<FadeManager> ().isFade = true;
+	}
 
 }
