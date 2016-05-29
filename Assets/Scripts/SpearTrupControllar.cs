@@ -7,10 +7,12 @@ public class SpearTrupControllar : MonoBehaviour {
 
     public int speed = 30;
 	private GameObject fadeManager;
+	private GameObject deathManager;
 
 	// Use this for initialization
 	void Start () {
 		fadeManager = GameObject.Find ("Stair");
+		deathManager = GameObject.Find ("DeathLifeManager");
 	}
 	
 	// Update is called once per frame
@@ -28,7 +30,9 @@ public class SpearTrupControllar : MonoBehaviour {
         if (other.tag == "Player")
 		{
             falg = true;
-			StartCoroutine (InObakeGameOver ());
+			if (!deathManager.GetComponent<DeathLifeManager> ().DeathMode) {
+				StartCoroutine (InObakeGameOver ());
+			}
         }
     }
 
