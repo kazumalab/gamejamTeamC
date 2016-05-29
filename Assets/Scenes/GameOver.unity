@@ -180,6 +180,9 @@ MonoBehaviour:
   deathIcon: {fileID: 0}
   lifeIcon: {fileID: 0}
   Icon: {fileID: 0}
+  SoundManagerMain: {fileID: 0}
+  DeathSound: {fileID: 0}
+  LifeSound: {fileID: 0}
   fadeImage: {fileID: 931971184}
 --- !u!4 &460631835
 Transform:
@@ -223,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeManager: {fileID: 1921142230}
   fade: {fileID: 931971184}
+  HowToCanvas: {fileID: 0}
 --- !u!4 &591400646
 Transform:
   m_ObjectHideFlags: 0
@@ -268,8 +272,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5, y: -98.5}
-  m_SizeDelta: {x: -19, y: 44}
+  m_AnchoredPosition: {x: 0, y: -206}
+  m_SizeDelta: {x: -19, y: 113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &684765294
 MonoBehaviour:
@@ -292,7 +296,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -650,10 +654,10 @@ RectTransform:
   - {fileID: 1666061973}
   m_Father: {fileID: 1773592055}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.5, y: 88}
-  m_SizeDelta: {x: -195, y: 28}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0.0000047683716, y: 83}
+  m_SizeDelta: {x: 167, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1444742704
 MonoBehaviour:
@@ -968,7 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1050,6 +1054,7 @@ MonoBehaviour:
   isEndFade: 0
   isDeathEnd: 0
   FadeImage: {fileID: 931971184}
+  HaveNotKey: {fileID: 0}
 --- !u!4 &1921142232
 Transform:
   m_ObjectHideFlags: 0
