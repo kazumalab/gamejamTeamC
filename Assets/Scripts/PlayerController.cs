@@ -10,12 +10,14 @@ public class PlayerController : MonoBehaviour {
 
 	public GameObject heads;
 	public GameObject deathlifeManager;
+	public GameObject fadeManager;
 	private CharacterController cc;
 
 
 	// --------------------------
 
 	void Start () {
+		fadeManager = GameObject.Find ("Stair");
 		cc = heads.GetComponent<CharacterController> ();
 	}
 	
@@ -30,6 +32,10 @@ public class PlayerController : MonoBehaviour {
 					Destroy (hit.collider.gameObject);
 				}
 			}
+            if (hit.collider.gameObject.tag == "Trup")
+            {
+                Destroy(hit.collider.gameObject);
+            }
 		}
 			
 
@@ -47,14 +53,15 @@ public class PlayerController : MonoBehaviour {
 
 
 	void PlayerCameraRotate(Vector2 v) {
-		
-		heads.transform.Rotate (new Vector3 (0, v.x, 0));
-		transform.Rotate (new Vector3 (-v.y, 0, 0));
+			heads.transform.Rotate (new Vector3 (0, v.x, 0));
+			transform.Rotate (new Vector3 (-v.y, 0, 0));
 	}
 
 	void PlayerMove() {
-		float dx = Input.GetAxis ("Vertical");
-		heads.transform.position += heads.transform.TransformDirection (Vector3.forward) * dx * 2;
+		if (!fadeManager.GetComponent<FadeManager> ().isEndFade) {
+			float dx = Input.GetAxis ("Vertical");
+			heads.transform.position += heads.transform.TransformDirection (Vector3.forward) * dx * 2;
+		}
 	}
 
 	void OnTriggerEnter(Collider col) {

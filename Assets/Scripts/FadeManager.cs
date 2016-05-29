@@ -3,14 +3,15 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class FadeManager : MonoBehaviour {
+public class FadeManager : MonoBehaviour { // ここでゲームオーバー処理とクリア処理
 
-	private bool isFade = false;
+	public bool isFade = false;
 	private float count = 1f;
 
 
-	private bool isFastFade;
-	private bool isEndFade = false;
+
+	public bool isFastFade;
+	public bool isEndFade = false;
 
 	public Image FadeImage;
 
@@ -32,8 +33,9 @@ public class FadeManager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void OnTriggerEnter (Collider col) {
+	void OnTriggerEnter (Collider col) { // Goalにたどり着いたとき
 		if (col.gameObject.tag == "Player") {
+			GameManager.Score++; // is static
 			isFade = true;
 			isEndFade = true;
 		}
