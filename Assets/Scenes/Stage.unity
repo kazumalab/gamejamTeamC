@@ -12720,6 +12720,20 @@ Prefab:
       propertyPath: fadeImage
       value: 
       objectReference: {fileID: 475721015}
+    - target: {fileID: 11482184, guid: 96d3fb20cebfd482aa4ee3a26557ee55, type: 2}
+      propertyPath: deathIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 505e553bd0b914dbebc55869bfc35a1a,
+        type: 3}
+    - target: {fileID: 11482184, guid: 96d3fb20cebfd482aa4ee3a26557ee55, type: 2}
+      propertyPath: lifeIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 54ac110054753446c8f5717a465a99e9,
+        type: 3}
+    - target: {fileID: 11482184, guid: 96d3fb20cebfd482aa4ee3a26557ee55, type: 2}
+      propertyPath: Icon
+      value: 
+      objectReference: {fileID: 2099393714}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96d3fb20cebfd482aa4ee3a26557ee55, type: 2}
   m_IsPrefabParent: 0
@@ -14808,7 +14822,7 @@ GameObject:
   - 222: {fileID: 2099393715}
   - 114: {fileID: 2099393714}
   m_Layer: 5
-  m_Name: Image
+  m_Name: DeathorLife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
