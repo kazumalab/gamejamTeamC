@@ -27,7 +27,7 @@ public class ObakeController : MonoBehaviour {
 	}
 
 	IEnumerator InObakeGameOver() {
-		yield return new WaitForSeconds (1);
+		yield return new WaitForSeconds (2);
 		FadeManager.GetComponent<FadeManager> ().isFade = true;
 		FadeManager.GetComponent<FadeManager> ().isEndFade = true;
 	}

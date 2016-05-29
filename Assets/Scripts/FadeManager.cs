@@ -3,10 +3,11 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class FadeManager : MonoBehaviour {
+public class FadeManager : MonoBehaviour { // ここでゲームオーバー処理とクリア処理
 
 	public bool isFade = false;
 	private float count = 1f;
+
 
 
 	public bool isFastFade;
@@ -32,8 +33,9 @@ public class FadeManager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void OnTriggerEnter (Collider col) {
+	void OnTriggerEnter (Collider col) { // Goalにたどり着いたとき
 		if (col.gameObject.tag == "Player") {
+			GameManager.Score++; // is static
 			isFade = true;
 			isEndFade = true;
 		}
