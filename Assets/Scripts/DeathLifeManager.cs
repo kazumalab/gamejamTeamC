@@ -8,7 +8,12 @@ public class DeathLifeManager : MonoBehaviour {
 
 	private float count = 0f;
 	private bool isAlphaTop = false;
-	private bool isFadeOn = false; // trueにするだけでフェードイン発動
+	public bool isFadeOn = false; // trueにするだけでフェードイン発動
+
+	public bool DeathMode = false;
+	public bool LifeMode = true;
+
+	public GameObject Player;
 
 	[Header("--フェードに使う--")]
 	public Image fadeImage;
@@ -17,6 +22,7 @@ public class DeathLifeManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
 	}
 	
 	// Update is called once per frame
@@ -31,6 +37,7 @@ public class DeathLifeManager : MonoBehaviour {
 	}
 
 	void FadeInAndOut(Image image) {
+		
 		if (isFadeOn) {
 			if (!isAlphaTop) {
 				count += 0.025f;
@@ -38,12 +45,24 @@ public class DeathLifeManager : MonoBehaviour {
 				count -= 0.025f;
 				if (image.color.a <= 0f) {
 					isFadeOn = false;
+					isAlphaTop = false;
+					SwichDeathorLife ();
 				}
 			}
 			setAlpha (image, count);
 			if (image.color.a >= 1f) {
 				isAlphaTop = true;
 			}
+		}
+	}
+
+	void SwichDeathorLife () {
+		if (DeathMode) {
+			DeathMode = false;
+			LifeMode = true;
+		} else {
+			DeathMode = true;
+			LifeMode = false;
 		}
 	}
 }
