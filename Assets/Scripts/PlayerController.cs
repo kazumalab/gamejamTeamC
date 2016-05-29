@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 	private CharacterController cc;
 	public bool haveKey = false;
 	public AudioClip voice;
+	public Image keyss;
 
 
 	// --------------------------
@@ -26,6 +27,10 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 
 		Debug.Log (haveKey + "have key?");
+
+		if (haveKey) {
+			keyss.gameObject.SetActive (true);
+		}
 
 		Ray ray = Camera.main.ScreenPointToRay (new Vector3 ((float)Screen.width / 2f, (float)Screen.height / 2f, 0));
 		RaycastHit hit;
